@@ -1,4 +1,3 @@
-<script>
 (function (root, factory) {
   try {
     // commonjs
@@ -167,4 +166,3 @@
   return VanillaToasts;
 
 });
-</script>
