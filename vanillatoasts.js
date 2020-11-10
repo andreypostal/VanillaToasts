@@ -1,3 +1,4 @@
+<script>
 (function (root, factory) {
   try {
     // commonjs
@@ -78,6 +79,15 @@
         toast.appendChild(img);
       }
 
+      var loader = document.createElement('div');
+      var loader_child = document.createElement('div');
+      loader.className = 'vanillatoasts-loader-container';
+      loader_child.className = 'vanillatoasts-loader';
+      loader_child.style.cssText = 'animation: VanillaToastsWidth ' + options.timeout + 'ms ease-in;'
+
+      loader.appendChild(loader_child);
+      toast.appendChild(loader);
+
       // position
       var position = options.positionClass
       switch (position) {
@@ -132,7 +142,8 @@
         delete VanillaToasts.toasts[toast.id];  //remove toast from object
       }
 
-      document.getElementById('vanillatoasts-container').appendChild(toast);
+      document.getElementById('vanillatoasts-container').appendChild(toast);  
+      
 
       //add toast to object so its easily gettable by its id
       VanillaToasts.toasts[toast.id] = toast;
@@ -156,3 +167,4 @@
   return VanillaToasts;
 
 });
+</script>
